@@ -1,0 +1,100 @@
+curl -i -X POST \
+  'https://wwwcie.ups.com/api/rating/v1/Rate?additionalinfo=string' \
+  -H 'Authorization: Bearer eyJraWQiOiI2NGM0YjYyMC0yZmFhLTQzNTYtYjA0MS1mM2EwZjM2Y2MxZmEiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJzdWIiOiJsbWNjdWxsb2NoQGxhcmVzZGVudGFsLmNvbSIsImF1ZCI6IlNoaXBwaW5nUmF0ZXMiLCJjbGllbnRpZCI6IlhzcHFJeVBmS3BOU2lkVUxDSDJXTEliWUZjYkFVQ1RiNk83UHBGR3VIYnBaM3F2aCIsIm5iZiI6MTY4OTIwODE2MCwiRGlzcGxheU5hbWUiOiJTaGlwcGluZ1JhdGVzIiwiaXNzIjoiaHR0cHM6XC9cL2FwaXMudXBzLmNvbSIsImV4cCI6MTY4OTIyMjU2MCwidXVpZCI6IkIzQUZBOTVCLUYyNUItMTA4Qi1BOUQwLTk0REY1QURGMjlCRiIsImlhdCI6MTY4OTIwODE2MCwianRpIjoiOGQxODQ2NDktNjQzNC00ZTUyLTkyNzYtZjE5ZGM4MDQ0ZTU0Iiwic2lkIjoiNjRjNGI2MjAtMmZhYS00MzU2LWIwNDEtZjNhMGYzNmNjMWZhIn0.ph5oHlx_6eCRhvh5w5hjWrW1Gx8K6cABNLdd-5RW6MRioTS37SHQoJ7zyKVzfaf0v0JIV3zTd_va8oKmZ7LTdRwMZpQ-YFOf-b5GVH7vps4jtyoKl2iEamietMSmmZxicJKw8P2oJEA1uD-_urk8vqzYCNitVyyJjRmr7QGhqeBK9AW_A5I6utqqhajMFJmUC3q_5A8Q8U4Mi-3FlIMiwxm0ByaJEJYX-E9o5oZwqG_ev2H7vq6EZUquCygamQzh_d53LHNAgiuoDbz-q3uKCG9ZHgJQ_cQpZDC2XpKvBpOOURL_a1u9e9OumBhqUHsCZwGf2EHbd6okNohKh6BsNl1mOivweFBg1fvt1_dV07dj4p_hFk0YrVHHRJUgH3fOymMD1UMAWOaUjY3th5QqBiiawJM4qS-rEk6Mmn3m2Rf-33qdlu_o6CDcxHMsCtYmfgg0igdqJ9Gf4wTCpw-iIWwbURE0OqJbN4JOUJ0xK0WAgIdTo_VyILfDt7nYQRrmxeef5SknFVlUZDxFnG_SGScL-B-jzch6H6RlXaNmKkW8-mCilr3HmXoM5GVJWsOEpqY5j607YuOrSl9ArmjSXSgPIssWBdkBaCNU9Jw6x9S7C8-ArEWqnD-dwAXuZaEvv648u28r2JOXIafWMKe9_xKHi7jM3m_WdhFsuU44JhQ' \
+  -H 'Content-Type: application/json' \
+  -H 'transId: TEST071223' \
+  -H 'transactionSrc: testing' \
+  -d '{
+    "RateRequest": {
+      "Request": {
+        "TransactionReference": {
+          "CustomerContext": "CustomerContext",
+          "TransactionIdentifier": "TransactionIdentifier"
+        }
+      },
+      "Shipment": {
+        "Shipper": {
+          "Name": "Lares Research",
+          "ShipperNumber": "96X505",
+          "Address": {
+            "AddressLine": [
+              "295 Lockheed Ave",
+              "",
+              ""
+            ],
+            "City": "CHICO",
+            "StateProvinceCode": "CA",
+            "PostalCode": "95973",
+            "CountryCode": "US"
+          }
+        },
+        "ShipTo": {
+          "Name": "Current Resident",
+          "Address": {
+            "AddressLine": [
+              "961 S. Claudina",
+              "",
+              ""
+            ],
+            "City": "Anaheim",
+            "StateProvinceCode": "CA",
+            "PostalCode": "92805",
+            "CountryCode": "US"
+          }
+        },
+        "ShipFrom": {
+          "Name": "Lares Research",
+          "Address": {
+            "AddressLine": [
+              "295 Lockheed Ave",
+              "",
+              ""
+            ],
+            "City": "CHICO",
+            "StateProvinceCode": "CA",
+            "PostalCode": "95973",
+            "CountryCode": "US"
+          }
+        },
+        "PaymentDetails": {
+          "ShipmentCharge": {
+            "Type": "01",
+            "BillShipper": {
+              "AccountNumber": "96X505"
+            }
+          }
+        },
+        "Service": {
+          "Code": "03",
+          "Description": "Ground"
+        },
+        "NumOfPieces": "1",
+        "Package": {
+          "SimpleRate": {
+            "Description": "SimpleRateDescription",
+            "Code": "XS"
+          },
+          "PackagingType": {
+            "Code": "02",
+            "Description": "Packaging"
+          },
+          "Dimensions": {
+            "UnitOfMeasurement": {
+              "Code": "IN",
+              "Description": "Inches"
+            },
+            "Length": "5",
+            "Width": "5",
+            "Height": "5"
+          },
+          "PackageWeight": {
+            "UnitOfMeasurement": {
+              "Code": "LBS",
+              "Description": "Pounds"
+            },
+            "Weight": "1"
+          }
+        }
+      }
+    }
+  }'
