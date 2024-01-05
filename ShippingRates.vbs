@@ -112,13 +112,7 @@ strBody = "{ " & _
     "}" & _
   "}"
 
-  'Write response to a file for troubleshooting
-  Dim fso, MyFile
-  Set fso = CreateObject("Scripting.FileSystemObject")
-  Set MyFile = fso.CreateTextFile("RequestBody(Rate).json", True)
-  MyFile.WriteLine(strBody)
-  MyFile.Close
-
+'  call writeResponse("RequestBody(Rate).json", strBody)
 '  wscript.quit
 
 ' Specify the URL of the RESTful API
@@ -155,11 +149,12 @@ If objHTTP.status = 200 Then
     objJSON("Response") = objHTTP.responseText
     
     ' Access the data from the response
-    Dim responseData
+    Dim responseData, codeValue
     responseData = objJSON("Response")
     
     ' Process the data as needed
-    MsgBox responseData
+    call writeResponse("ResponseBody(Rate).json", responseData)
+       
 Else
     ' Display an error message if the request was not successful
     MsgBox "Rate Error: " & objHTTP.status & " - " & objHTTP.statusText
@@ -168,7 +163,16 @@ End If
 ' Clean up the objects
 Set objJSON = Nothing
 Set objHTTP = Nothing
-
+'______________________________________________________________________________________________
+'Write response to a file for troubleshooting'
+sub writeResponse(fileName, strText)
+  Dim fso, MyFile
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  Set MyFile = fso.CreateTextFile(fileName, True)
+  MyFile.WriteLine(strText)
+  MyFile.Close
+end sub
+'______________________________________________________________________________________________
 ' Function to obtain authorization token
 Function AuthToken
 Const ForReading = 1
@@ -218,5 +222,4 @@ End If
 
 ' Clean up the objects
 Set objHTTP = Nothing
-
 End Function
