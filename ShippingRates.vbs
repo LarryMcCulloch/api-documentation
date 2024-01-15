@@ -7,18 +7,18 @@ strVersion = "v1"
 strRequestOption = "Rate" 
 'strRequestOption = "Shop"
 ' Specify customer parameters
-strToName = "Current Resident"
-strToAddr1 = "961 S. Claudina"
+strToName = "David C. Brown, DDS"
+strToAddr1 = "2575 Ceanothus Ave #160"
 strToAddr2 = ""
 strToAddr3 = ""
-strToCity = "Anaheim"
+strToCity = "Chico"
 strToStateProvinceCode = "CA"
-strToPostalCode = "92805"
+strToPostalCode = "95973"
 strToCountryCode = "US"
 ' Specify UPS service and package weight
 strServiceCode = "03"
 strServiceDescription = "Ground"
-strWeight = "1"
+strWeight = "2"
 
 ' Body is a JSON object containing all the request parameters
 strBody = "{ " & _
