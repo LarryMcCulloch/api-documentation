@@ -18,7 +18,7 @@ strToCountryCode = "US"
 ' Specify UPS service and package weight
 strServiceCode = "03"
 strServiceDescription = "Ground"
-strWeight = "2"
+strWeight = "5"
 
 ' Body is a JSON object containing all the request parameters
 strBody = "{ " & _
@@ -112,7 +112,7 @@ strBody = "{ " & _
     "}" & _
   "}"
 
-'  call writeResponse("RequestBody(Rate).json", strBody)
+  call writeResponse("RequestBody(Rate).json", strBody)
 '  wscript.quit
 
 ' Specify the URL of the RESTful API

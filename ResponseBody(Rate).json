@@ -1,1 +1,81 @@
-{"RateResponse":{"Response":{"ResponseStatus":{"Code":"1", "Description":"Success"}, "Alert":[{"Code":"110971", "Description":"Your invoice may vary from the displayed reference rates"}, {"Code":"111685", "Description":"TPFCNegotiatedRatesIndicator is applicable only for Third party/Freight Collect shipments."}], "TransactionReference":{"CustomerContext":"testing", "TransactionIdentifier":"ciewssoat1h8ysR6ZfrMF1"}}, "RatedShipment":{"Service":{"Code":"03", "Description":""}, "RatedShipmentAlert":{"Code":"110971", "Description":"Your invoice may vary from the displayed reference rates"}, "BillingWeight":{"UnitOfMeasurement":{"Code":"LBS", "Description":"Pounds"}, "Weight":"2.0"}, "TransportationCharges":{"CurrencyCode":"USD", "MonetaryValue":"17.84"}, "ServiceOptionsCharges":{"CurrencyCode":"USD", "MonetaryValue":"0.00"}, "TotalCharges":{"CurrencyCode":"USD", "MonetaryValue":"17.84"}, "NegotiatedRateCharges":{"TotalCharge":{"CurrencyCode":"USD", "MonetaryValue":"17.66"}}, "RatedPackage":{"TransportationCharges":{"CurrencyCode":"USD", "MonetaryValue":"17.84"}, "ServiceOptionsCharges":{"CurrencyCode":"USD", "MonetaryValue":"0.00"}, "TotalCharges":{"CurrencyCode":"USD", "MonetaryValue":"17.84"}, "Weight":"2.0", "BillingWeight":{"UnitOfMeasurement":{"Code":"LBS", "Description":"Pounds"}, "Weight":"2.0"}}}}}
+{
+    "RateResponse": {
+        "Response": {
+            "ResponseStatus": {
+                "Code": "1",
+                "Description": "Success"
+            },
+            "Alert": [
+                {
+                    "Code": "110971",
+                    "Description": "Your invoice may vary from the displayed reference rates"
+                },
+                {
+                    "Code": "111685",
+                    "Description": "TPFCNegotiatedRatesIndicator is applicable only for Third party/Freight Collect shipments."
+                }
+            ],
+            "TransactionReference": {
+                "CustomerContext": "testing",
+                "TransactionIdentifier": "iewssoas2166b0q5wY7Llp"
+            }
+        },
+        "RatedShipment": {
+            "Service": {
+                "Code": "03",
+                "Description": ""
+            },
+            "RatedShipmentAlert": {
+                "Code": "110971",
+                "Description": "Your invoice may vary from the displayed reference rates"
+            },
+            "BillingWeight": {
+                "UnitOfMeasurement": {
+                    "Code": "LBS",
+                    "Description": "Pounds"
+                },
+                "Weight": "5.0"
+            },
+            "TransportationCharges": {
+                "CurrencyCode": "USD",
+                "MonetaryValue": "20.66"
+            },
+            "ServiceOptionsCharges": {
+                "CurrencyCode": "USD",
+                "MonetaryValue": "0.00"
+            },
+            "TotalCharges": {
+                "CurrencyCode": "USD",
+                "MonetaryValue": "20.66"
+            },
+            "NegotiatedRateCharges": {
+                "TotalCharge": {
+                    "CurrencyCode": "USD",
+                    "MonetaryValue": "20.45"
+                }
+            },
+            "RatedPackage": {
+                "TransportationCharges": {
+                    "CurrencyCode": "USD",
+                    "MonetaryValue": "20.66"
+                },
+                "ServiceOptionsCharges": {
+                    "CurrencyCode": "USD",
+                    "MonetaryValue": "0.00"
+                },
+                "TotalCharges": {
+                    "CurrencyCode": "USD",
+                    "MonetaryValue": "20.66"
+                },
+                "Weight": "5.0",
+                "BillingWeight": {
+                    "UnitOfMeasurement": {
+                        "Code": "LBS",
+                        "Description": "Pounds"
+                    },
+                    "Weight": "5.0"
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,86 @@
-{ "RateRequest": {"Request": {"TransactionReference": {"CustomerContext": "Verify Success response","TransactionIdentifier": "?"}},"Shipment": {"Shipper": {"Name": "Lares Research","ShipperNumber": "96X505","Address": {"AddressLine": "295 Lockheed Ave","City": "Chico","StateProvinceCode": "CA","PostalCode": "95973","CountryCode": "US"}},"ShipTo": {"Name":"Current Resident","Address": {"AddressLine": ["961 S. Claudina","",""],"City":"Anaheim","StateProvinceCode":"CA","PostalCode":"92805","CountryCode":"US",}},"ShipFrom": {"Name": "Lares Research","Address": {"AddressLine": "295 Lockheed Ave","City": "Chico","StateProvinceCode": "CA","PostalCode": "95973","CountryCode": "US"}},"PaymentDetails": {"ShipmentCharge": {"Type": "01","BillShipper": {"AccountNumber": "96X505"}}},"ShipmentRatingOptions": {"TPFCNegotiatedRatesIndicator": "Y","NegotiatedRatesIndicator": "Y"},"Service": {"Code":"03","Description":"Ground"},"NumOfPieces": "1","Package": {"PackagingType": {"Code": "02","Description": "Packaging"},"Dimensions": {"UnitOfMeasurement": {"Code": "IN","Description": "Inches"},"Length": "5","Width": "5","Height": "5"},"PackageWeight": {"UnitOfMeasurement": {"Code": "LBS","Description": "Pounds"},"Weight":"1"}}}}}
+{
+    "RateRequest": {
+        "Request": {
+            "TransactionReference": {
+                "CustomerContext": "Verify Success response",
+                "TransactionIdentifier": "?"
+            }
+        },
+        "Shipment": {
+            "Shipper": {
+                "Name": "Lares Research",
+                "ShipperNumber": "96X505",
+                "Address": {
+                    "AddressLine": "295 Lockheed Ave",
+                    "City": "Chico",
+                    "StateProvinceCode": "CA",
+                    "PostalCode": "95973",
+                    "CountryCode": "US"
+                }
+            },
+            "ShipTo": {
+                "Name": "Current Resident",
+                "Address": {
+                    "AddressLine": [
+                        "961 S. Claudina",
+                        "",
+                        ""
+                    ],
+                    "City": "Anaheim",
+                    "StateProvinceCode": "CA",
+                    "PostalCode": "92805",
+                    "CountryCode": "US",
+                }
+            },
+            "ShipFrom": {
+                "Name": "Lares Research",
+                "Address": {
+                    "AddressLine": "295 Lockheed Ave",
+                    "City": "Chico",
+                    "StateProvinceCode": "CA",
+                    "PostalCode": "95973",
+                    "CountryCode": "US"
+                }
+            },
+            "PaymentDetails": {
+                "ShipmentCharge": {
+                    "Type": "01",
+                    "BillShipper": {
+                        "AccountNumber": "96X505"
+                    }
+                }
+            },
+            "ShipmentRatingOptions": {
+                "TPFCNegotiatedRatesIndicator": "Y",
+                "NegotiatedRatesIndicator": "Y"
+            },
+            "Service": {
+                "Code": "03",
+                "Description": "Ground"
+            },
+            "NumOfPieces": "1",
+            "Package": {
+                "PackagingType": {
+                    "Code": "02",
+                    "Description": "Packaging"
+                },
+                "Dimensions": {
+                    "UnitOfMeasurement": {
+                        "Code": "IN",
+                        "Description": "Inches"
+                    },
+                    "Length": "5",
+                    "Width": "5",
+                    "Height": "5"
+                },
+                "PackageWeight": {
+                    "UnitOfMeasurement": {
+                        "Code": "LBS",
+                        "Description": "Pounds"
+                    },
+                    "Weight": "1"
+                }
+            }
+        }
+    }
+}

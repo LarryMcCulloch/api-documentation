@@ -23,16 +23,16 @@
                 }
             },
             "ShipTo": {
-                "Name": "Current Resident",
+                "Name": "David C. Brown, DDS",
                 "Address": {
                     "AddressLine": [
-                        "961 S. Claudina",
+                        "2575 Ceanothus Ave #160",
                         "",
                         ""
                     ],
-                    "City": "Anaheim",
+                    "City": "Chico",
                     "StateProvinceCode": "CA",
-                    "PostalCode": "92805",
+                    "PostalCode": "95973",
                     "CountryCode": "US"
                 }
             },
@@ -82,7 +82,7 @@
                         "Code": "LBS",
                         "Description": "Pounds"
                     },
-                    "Weight": "1"
+                    "Weight": "5"
                 }
             }
         }
