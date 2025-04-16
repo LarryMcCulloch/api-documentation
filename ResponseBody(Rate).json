@@ -17,7 +17,7 @@
             ],
             "TransactionReference": {
                 "CustomerContext": "testing",
-                "TransactionIdentifier": "iewssoas2166b0q5wY7Llp"
+                "TransactionIdentifier": "ciewssoas4j6JMpt3x0XDW"
             }
         },
         "RatedShipment": {
@@ -34,11 +34,11 @@
                     "Code": "LBS",
                     "Description": "Pounds"
                 },
-                "Weight": "5.0"
+                "Weight": "1.0"
             },
             "TransportationCharges": {
                 "CurrencyCode": "USD",
-                "MonetaryValue": "20.66"
+                "MonetaryValue": "18.39"
             },
             "ServiceOptionsCharges": {
                 "CurrencyCode": "USD",
@@ -46,18 +46,18 @@
             },
             "TotalCharges": {
                 "CurrencyCode": "USD",
-                "MonetaryValue": "20.66"
+                "MonetaryValue": "18.39"
             },
             "NegotiatedRateCharges": {
                 "TotalCharge": {
                     "CurrencyCode": "USD",
-                    "MonetaryValue": "20.45"
+                    "MonetaryValue": "18.21"
                 }
             },
             "RatedPackage": {
                 "TransportationCharges": {
                     "CurrencyCode": "USD",
-                    "MonetaryValue": "20.66"
+                    "MonetaryValue": "18.39"
                 },
                 "ServiceOptionsCharges": {
                     "CurrencyCode": "USD",
@@ -65,15 +65,15 @@
                 },
                 "TotalCharges": {
                     "CurrencyCode": "USD",
-                    "MonetaryValue": "20.66"
+                    "MonetaryValue": "18.39"
                 },
-                "Weight": "5.0",
+                "Weight": "1.0",
                 "BillingWeight": {
                     "UnitOfMeasurement": {
                         "Code": "LBS",
                         "Description": "Pounds"
                     },
-                    "Weight": "5.0"
+                    "Weight": "1.0"
                 }
             }
         }

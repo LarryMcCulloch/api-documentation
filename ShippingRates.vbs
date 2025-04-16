@@ -18,7 +18,7 @@ strToCountryCode = "US"
 ' Specify UPS service and package weight
 strServiceCode = "03"
 strServiceDescription = "Ground"
-strWeight = "5"
+strWeight = "1"
 
 ' Body is a JSON object containing all the request parameters
 strBody = "{ " & _
@@ -26,7 +26,7 @@ strBody = "{ " & _
       """Request"": {" & _
         """TransactionReference"": {" & _
           """CustomerContext"": ""Verify Success response""," & _
-          """TransactionIdentifier"": ""TEST071223""" & _
+          """TransactionIdentifier"": ""TEST041625""" & _
         "}" & _
       "}," & _
       """Shipment"": {" & _
@@ -79,7 +79,7 @@ strBody = "{ " & _
         "}," & _
         """ShipmentRatingOptions"": {" & _
           """TPFCNegotiatedRatesIndicator"": ""N""," & _
-          """NegotiatedRatesIndicator"": ""N""" & _
+          """NegotiatedRatesIndicator"": ""Y""" & _
         "}," & _
         """Service"": {" & _
           """Code"":""" & strServiceCode & """," & _
@@ -118,6 +118,8 @@ strBody = "{ " & _
 ' Specify the URL of the RESTful API
 strURL = "https://wwwcie.ups.com/api/rating/"       'Development/Testing
 'strURL = "https://onlinetools.ups.com/api/rating/"  'Production
+' NOTE: Production endpoint returns accurate standard and negotiated rates compared to UPS.com (tested 4/16/2025)
+' NOTE: Development endpoint returns only standard rates (tested 4/16/2025)
 strURL = strURL & strVersion & "/" & strRequestOption
 
 ' Specify the OAuth bearer token

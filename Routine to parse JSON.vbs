@@ -174,7 +174,6 @@ Class aspJSON
 		Set currentDict = data(0)
 
 		For Each currentKey In keysArray
-'			MsgBox currentKey
 			If currentDict.Exists(currentKey) Then
                 If currentKey <> keysArray(UBound(keysArray)) Then
                     Set currentDict = currentDict(currentKey)
@@ -296,29 +295,18 @@ Dim myJSONParser, jsonResponse
 Dim firstItemDICT, RateResponseDICT, ResponseDICT, ResponseStatusDICT, AlertDICT, TransactionReferenceDICT
 Dim RatedShipmentDICT, RatedPackageDICT, TotalChargesDICT, NegotiatedRateChargesDICT, TotalChargeDICT
 Set myJSONParser = New aspJSON
-'jsonResponse = "[{""RateResponse"":{""Response"":{""ResponseStatus"":{""Code"":""1"", ""Description"":""Success""}, ""Alert"":[{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}, {""Code"":""110920"", ""Description"":""Ship To Address Classification is changed from Commercial to Residential""}, {""Code"":""111685"", ""Description"":""TPFCNegotiatedRatesIndicator is applicable only for Third party/Freight Collect shipments.""}], ""TransactionReference"":{""CustomerContext"":""testing"", ""TransactionIdentifier"":""ciewssoas1473yk6cXXN41""}}, ""RatedShipment"":{""Service"":{""Code"":""03"", ""Description"":""""}, ""RatedShipmentAlert"":[{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}, {""Code"":""110920"", ""Description"":""Ship To Address Classification is changed from Commercial to Residential""}], ""BillingWeight"":{""UnitOfMeasurement"":{""Code"":""LBS"", ""Description"":""Pounds""}, ""Weight"":""1.0""}, ""TransportationCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}, ""ServiceOptionsCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""0.00""}, ""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}, ""NegotiatedRateCharges"":{""TotalCharge"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.35""}}, ""RatedPackage"":{""TransportationCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}, ""ServiceOptionsCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""0.00""}, ""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}, ""Weight"":""1.0"", ""BillingWeight"":{""UnitOfMeasurement"":{""Code"":""LBS"", ""Description"":""Pounds""}, ""Weight"":""1.0""}}}}}]"
-jsonResponse = "[{""RateResponse"":{""Response"":{""ResponseStatus"":{""Code"":""1"", ""Description"":""Success""}, ""Alert"":[{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}, {""Code"":""111685"", ""Description"":""TPFCNegotiatedRatesIndicator is applicable only for Third party/Freight Collect shipments.""}], ""TransactionReference"":{""CustomerContext"":""testing"", ""TransactionIdentifier"":""ciewssoat1h8ysR6ZfrMF1""}}, ""RatedShipment"":{""Service"":{""Code"":""03"", ""Description"":""""}, ""RatedShipmentAlert"":{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}, ""BillingWeight"":{""UnitOfMeasurement"":{""Code"":""LBS"", ""Description"":""Pounds""}, ""Weight"":""2.0""}, ""TransportationCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.84""}, ""ServiceOptionsCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""0.00""}, ""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.84""}, ""NegotiatedRateCharges"":{""TotalCharge"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.66""}}, ""RatedPackage"":{""TransportationCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.84""}, ""ServiceOptionsCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""0.00""}, ""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.84""}, ""Weight"":""2.0"", ""BillingWeight"":{""UnitOfMeasurement"":{""Code"":""LBS"", ""Description"":""Pounds""}, ""Weight"":""2.0""}}}}}]"
+
+' Sample JSON response (replace with actual response from your API)
+jsonResponse = "[{""RateResponse"":{""Response"":{""ResponseStatus"":{""Code"":""1"", ""Description"":""Success""}, ""Alert"":[{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}, {""Code"":""110920"", ""Description"":""Ship To Address Classification is changed from Commercial to Residential""}, {""Code"":""111685"", ""Description"":""TPFCNegotiatedRatesIndicator is applicable only for Third party/Freight Collect shipments.""}], ""TransactionReference"":{""CustomerContext"":""testing"", ""TransactionIdentifier"":""ciewssoas1473yk6cXXN41""}}, ""RatedShipment"":{""Service"":{""Code"":""03"", ""Description"":""""}, ""RatedShipmentAlert"":[{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}, {""Code"":""110920"", ""Description"":""Ship To Address Classification is changed from Commercial to Residential""}], ""BillingWeight"":{""UnitOfMeasurement"":{""Code"":""LBS"", ""Description"":""Pounds""}, ""Weight"":""1.0""}, ""TransportationCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}, ""ServiceOptionsCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""0.00""}, ""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}, ""NegotiatedRateCharges"":{""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.35""}}, ""RatedPackage"":{""TransportationCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}, ""ServiceOptionsCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""0.00""}, ""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}, ""Weight"":""1.0"", ""BillingWeight"":{""UnitOfMeasurement"":{""Code"":""LBS"", ""Description"":""Pounds""}, ""Weight"":""1.0""}}}}}]"
+'jsonResponse = "[{""RateResponse"":{""Response"":{""ResponseStatus"":{""Code"":""1"", ""Description"":""Success""}, ""Alert"":[{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}, {""Code"":""111685"", ""Description"":""TPFCNegotiatedRatesIndicator is applicable only for Third party/Freight Collect shipments.""}], ""TransactionReference"":{""CustomerContext"":""testing"", ""TransactionIdentifier"":""ciewssoat1h8ysR6ZfrMF1""}}, ""RatedShipment"":{""Service"":{""Code"":""03"", ""Description"":""""}, ""RatedShipmentAlert"":{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}, ""BillingWeight"":{""UnitOfMeasurement"":{""Code"":""LBS"", ""Description"":""Pounds""}, ""Weight"":""2.0""}, ""TransportationCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.84""}, ""ServiceOptionsCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""0.00""}, ""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.84""}, ""NegotiatedRateCharges"":{""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.66""}}, ""RatedPackage"":{""TransportationCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.84""}, ""ServiceOptionsCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""0.00""}, ""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""17.84""}, ""Weight"":""2.0"", ""BillingWeight"":{""UnitOfMeasurement"":{""Code"":""LBS"", ""Description"":""Pounds""}, ""Weight"":""2.0""}}}}}]"
 
 ' Call methods on the object, load JSON data, etc.
 myJSONParser.loadJSON jsonResponse
 
-'Drill into the nesteded JSON structure
-' Set firstItemDICT = myJSONParser.data(0)
-'     Set RateResponseDICT = firstItemDICT("RateResponse")
-'         Set ResponseDICT = RateResponseDICT("Response")
-'             Set ResponseStatusDICT = ResponseDICT("ResponseStatus")
-'             Set AlertDICT = ResponseDICT("ResponseStatus")
-'             Set TransactionReferenceDICT = ResponseDICT("ResponseStatus")
-'         Set RatedShipmentDICT = RateResponseDICT("RatedShipment")
-'             Set NegotiatedRateChargesDICT = RatedShipmentDICT("NegotiatedRateCharges")
-'                 Set TotalChargeDICT = NegotiatedRateChargesDICT("TotalCharge")
-'             Set RatedPackageDICT = RatedShipmentDICT("RatedPackage")
-'                 Set TotalChargesDICT = RatedPackageDICT("TotalCharges")
-
 ' Display or use the parsed data
-'Call GetNestedValue method
-WScript.Echo myJSONParser.GetNestedValue("RateResponse.RatedShipment.RatedPackage.TotalCharges.MonetaryValue")
-
+' Call GetNestedValue method
+WScript.Echo myJSONParser.GetNestedValue("RateResponse.RatedShipment.TotalCharges.MonetaryValue") & " (Standard Rate)"
+WScript.Echo myJSONParser.GetNestedValue("RateResponse.RatedShipment.NegotiatedRateCharges.TotalCharges.MonetaryValue") & " (Negotiated Rate)"
 
 ' WScript.Echo myJSONParser.JSONoutput
 ' 'WScript.Echo ResponseStatusDICT("Code")
