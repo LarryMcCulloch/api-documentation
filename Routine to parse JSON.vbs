@@ -154,6 +154,31 @@ Class aspJSON
         If Right(val, 1) = stripper Then val = Left(val, Len(val) - 1)
         aj_Strip = val
     End Function
+
+	'********** Chat GPT created function *************
+	
+	Public Function GetNestedValue(keyList)
+		' Recursive function to access nested dictionaries
+		Dim keysArray, currentKey, currentDict
+		keysArray = Split(keyList, ".")
+		Set currentDict = data(0)
+
+		For Each currentKey In keysArray
+			If currentDict.Exists(currentKey) Then
+                If currentKey <> keysArray(UBound(keysArray)) Then
+                    Set currentDict = currentDict(currentKey)
+                Else
+                    GetNestedValue = currentDict(currentKey)
+                End If
+			Else
+				Set GetNestedValue = Null ' Key not found
+				Exit Function
+			End If
+		Next
+	End Function
+	
+'******************************************************	
+
 End Class
 
 ' Example usage
@@ -163,6 +188,8 @@ Set myJSONParser = New aspJSON
 jsonResponse = "[{""RateResponse"":{""Response"":{""ResponseStatus"":{""Code"":""1"", ""Description"":""Success""}, ""Alert"":[{""Code"":""110971"", ""Description"":""Your invoice may vary from the displayed reference rates""}], ""TransactionReference"":{""CustomerContext"":""testing""}}, ""RatedShipment"":{""TotalCharges"":{""CurrencyCode"":""USD"", ""MonetaryValue"":""20.56""}}}}]"
 
 myJSONParser.loadJSON(jsonResponse)
-WScript.Echo myJSONParser.data("RateResponse")("RatedShipment")("TotalCharges")("MonetaryValue")
+' Call GetNestedValue method
+WScript.Echo myJSONParser.GetNestedValue("RateResponse.RatedShipment.TotalCharges.MonetaryValue") & " (Standard Rate)"
+WScript.Echo myJSONParser.GetNestedValue("RateResponse.RatedShipment.NegotiatedRateCharges.TotalCharges.MonetaryValue") & " (Negotiated Rate)"
 
 Set myJSONParser = Nothing
